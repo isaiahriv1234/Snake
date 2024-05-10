@@ -1,20 +1,20 @@
 import javax.swing.*;
 
 public class App {
+    public static void main(String[] args) throws Exception {
+        int boardWidth = 600;
+        int boardHeight = boardWidth;
 
-    public static void main(String[] args) {
-        int boardwidth = 600;
-        int boardHeight = boardwidth;
-
-        JFrame frame = new JFrame("The Hungry Python");
+        JFrame frame = new JFrame("The Hungry Centipede");
         frame.setVisible(true);
-        frame.setSize(boardwidth, boardHeight);
+	frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        HungryPython hungryPython = new HungryPython(boardwidth, boardHeight);// passes in two parameters
-        frame.add(hungryPython);
+        SnakeGame snakeGame = new SnakeGame(boardWidth, boardHeight);
+        frame.add(snakeGame);
         frame.pack();
+        snakeGame.requestFocus();
     }
 }
